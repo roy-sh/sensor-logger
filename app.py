@@ -36,7 +36,7 @@ class SensorLoggerStack(Stack):
                                 instance_type=ec2.InstanceType("t2.micro"),
                                 machine_image=ec2.MachineImage.latest_amazon_linux(),
                                 vpc=vpc,
-                                key_name="your-key-pair-name")
+                                key_name="crypto_stream")
 
         # User Data to install required software on the EC2 instance
         instance.user_data.add_commands(

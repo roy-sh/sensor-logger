@@ -3,6 +3,7 @@ from aws_cdk import (
     aws_ec2 as ec2,
     aws_iam as iam,
     aws_dynamodb as dynamodb,
+    aws_lambda as _lambda, 
     App
 )
 from constructs import Construct

@@ -1,13 +1,15 @@
 from aws_cdk import (
+    Stack,
     aws_ec2 as ec2,
-    aws_lambda as _lambda,
+    aws_iam as iam,
     aws_dynamodb as dynamodb,
-    core,
+    App
 )
+from constructs import Construct
 
-class SensorLoggerStack(core.Stack):
+class SensorLoggerStack(Stack):
 
-    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
         # DynamoDB Table
@@ -44,7 +46,7 @@ class SensorLoggerStack(core.Stack):
             # Add commands to install and configure your application
         )
 
-app = core.App()
+app = App()
 SensorLoggerStack(app, "SensorLoggerStack")
 app.synth()
 
